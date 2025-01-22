@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "bee23683-7398-4cb6-8edb-37a0c29a23cb",
+		"name": "Trueigtech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38006443"
+	},
+	"item": [
+		{
+			"name": "insertBook",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"title\": \"Harry Potter\",\r\n    \"genre\": \"Fantasy\",\r\n    \"availability\": 1,\r\n     \"author_id\": 1\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/api/book/insert"
+			},
+			"response": []
+		},
+		{
+			"name": "createAuthor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"JK Rowling\",\r\n    \"bio\": \"British author of the Harry Potter series\"\r\n    \r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/api/author/create"
+			},
+			"response": []
+		},
+		{
+			"name": "getBooks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:3000/api/book/get"
+			},
+			"response": []
+		},
+		{
+			"name": "getBookByAuthorId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:3000/api/book/findBookByAuthId/1"
+			},
+			"response": []
+		},
+		{
+			"name": "getBookByAuthorName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:3000/api/book/findBookByAuthName/\"JK Rowling\""
+			},
+			"response": []
+		},
+		{
+			"name": "totalBookByGenre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:3000/api/book/totalBookByGenre/\"Fantasy\""
+			},
+			"response": []
+		},
+		{
+			"name": "getBookBySearchingAuthorName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/book/search/?author=JK Rowling",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"book",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "JK Rowling"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBookBySearchingBookTitle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/book/search/?title=Harry Potter",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"book",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Harry Potter"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBookBySearchingBookGenre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/book/search/?genre=Fantasy",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"book",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "Fantasy"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createMember",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\":\"Pratham\",\r\n  \"contact_info\":\"\"\r\n   \r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/api/member/create"
+			},
+			"response": []
+		},
+		{
+			"name": "getMembers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:3000/api/member/getMembers"
+			},
+			"response": []
+		},
+		{
+			"name": "createBorrowHistory",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n   \"book_id\":2,\r\n   \"member_id\":1\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/api/borrow_history/create"
+			},
+			"response": []
+		},
+		{
+			"name": "getOverDueBooks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:3000/api/borrow_history/getOverdueBooks/1"
+			},
+			"response": []
+		}
+	]
+}
